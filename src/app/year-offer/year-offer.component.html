@@ -1,0 +1,50 @@
+<div class="d-flex flex-column justify-content-center align-items-center bg-white offer-container mt-5">
+
+  <!-- the area for amount of money saved in percentages -->
+  <div 
+    class="d-flex discount justify-content-center"
+    [ngClass]="{'opacity-0': isFirst === false}"
+  >
+    Save {{calculateDiscountPercentage()}}%
+  </div>
+  <h5 class="border-h5 mt-2 pb-3 w-75 text-center">
+    {{changeDisplayedYearPlan()}}
+  </h5>
+  <p class="number-of-devices-paragraph text-center">Number of devices</p>
+
+  <!-- The section for the number of devices buttons -->
+  <span class="d-flex justify-content-center">
+    <button 
+      *ngFor="let unit of priceData.value | keyvalue:onCompare"
+      class="number-of-devices-button"
+      (click)="changeUnitCount(unit.key)"
+      [ngClass]="{'selected-device-number-button': unit.key === chosenUnitKey}"
+    >
+      {{getUnitCount(unit.key)}}
+    </button>
+  </span>
+
+  <!-- Pricings -->
+  <h3 class="mt-2 new-price mb-0 text-center">
+    ${{this.priceData.value[this.chosenUnitKey].newPrice}}
+  </h3>
+  <h5 class="old-price text-center">
+    Old Price <del>${{this.priceData.value[this.chosenUnitKey].oldPrice}}</del>
+  </h5>
+  <span class="save-price">Save ${{calculateSave()}}</span>
+  <p class="for-the-year-paragraph mt-2 text-center">* For the first year</p>
+
+  <!-- The buy button -->
+  <button class="buy-button" [ngClass]="{'buy-button-black': isFirst === false}">
+    <span class="buy-button-text">
+      Buy Now
+    </span>
+    <span class="arrow"></span>
+  </button>
+
+  <!-- Terms of use section -->
+  <p class="terms-of-use-paragraph mt-1 mb-4 text-center">
+    Plus applicable sales tax.<br/>
+    See <a href="https://www.bitdefender.com/solutions/total-security.html#tos">Terms of Use</a> below.
+  </p>
+</div>

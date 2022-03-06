@@ -1,0 +1,23 @@
+<div class="container d-flex align-items-center h-100">
+
+  <!-- defining the buy zone -->
+  <div class="row buy-zone flex-fill py-5 px-5">
+
+    <!-- header of the buy zone -->
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+      <h2 class="section-title text-center">Get full protection against all threats</h2>
+      <h3 class="section-sub-title text-center">Start today for as low as $3.33/mo</h3>
+    </div>
+
+    <!-- we use ngFor to display all the year offers  
+    responsivness is ensured by the bootstrap classes 
+    data is passed to the app-year-component through inputs-->
+    <app-year-offer 
+      *ngFor="let priceData of yearFilteredPricesData | keyvalue; let index = index"
+      class="col-md-{{getNumberOfYears()}}"
+      [priceData]="priceData"
+      [isFirst]="index === 0 ? true : false"
+    >
+    </app-year-offer>
+  </div>
+</div>

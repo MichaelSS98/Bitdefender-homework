@@ -1,0 +1,144 @@
+.offer-container {
+  border-radius: 8px;
+}
+
+.discount {
+  background-color: #2cb43d;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4px 0 8px;
+}
+
+.border-h5 {
+  border-bottom: 1px solid #dedede;
+  font-weight: 700;
+}
+
+.number-of-devices-paragraph {
+  font-size: 12px;
+}
+
+.number-of-devices-button {
+  border: 2px solid #e4f2ff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  color: #006eff;
+  background-color: white;
+  border-radius: 8px;
+  padding: 6px 13px;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0px 3px;
+
+  &:hover {
+    background: #e4f2ff;
+  }
+}
+
+.selected-device-number-button {
+  color: white;
+  background-color: #006eff;
+
+  &:hover {
+    background-color: #006eff;
+  }
+}
+
+.new-price {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.old-price {
+  color: #7e7e7e;
+  font-size: 24px;
+}
+
+.save-price {
+  background-color: #2cb43d33;
+  color: #2cb43d;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 2px 8px;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.for-the-year-paragraph {
+  font-size: 12px;
+  color: #7e7e7e;
+  font-weight: 500;
+}
+
+.buy-button {
+  background-color: #eb0000;
+  border: 2px solid #eb0000 !important;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  position: relative;
+  width: 80%;
+  padding: 10px 26px 8px 28px;
+  font-weight: 700;
+
+  &:hover {
+    .buy-button-text {
+      margin-right: 10px;
+    }
+
+    .arrow {
+      opacity: 1;
+    }
+  }
+}
+
+.buy-button-black {
+  background-color: white;
+  border: 2px solid black !important;
+  color: black;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.buy-button-text {
+  align-items: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow {
+  background: url(https://www.bitdefender.com/etc.clientlibs/bitdefender/clientlibs/clientlib-site/resources/images/aem/white-arrow.svg)
+    no-repeat center center;
+  height: 90%;
+  width: 15px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  bottom: 0;
+}
+
+.terms-of-use-paragraph {
+  font-size: 12px;
+  color: #7e7e7e;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .old-price {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .old-price {
+    font-size: 18px;
+  }
+}

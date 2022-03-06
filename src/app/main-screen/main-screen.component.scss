@@ -1,0 +1,32 @@
+.buy-zone {
+  background-color: #e4f2ff;
+  border-radius: 8px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.section-sub-title {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .section-title {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 482px) {
+  .section-sub-title {
+    font-size: 20px;
+  }
+}
