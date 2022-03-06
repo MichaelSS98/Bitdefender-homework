@@ -35,12 +35,15 @@
   <p class="for-the-year-paragraph mt-2 text-center">* For the first year</p>
 
   <!-- The buy button -->
-  <button class="buy-button" [ngClass]="{'buy-button-black': isFirst === false}">
+  <a href="{{priceData.value[this.chosenUnitKey].storeUrl}}"
+    class="buy-button text-center" 
+    [ngClass]="{'buy-button-black': isFirst === false}"
+  >
     <span class="buy-button-text">
       Buy Now
     </span>
     <span class="arrow"></span>
-  </button>
+  </a>
 
   <!-- Terms of use section -->
   <p class="terms-of-use-paragraph mt-1 mb-4 text-center">
