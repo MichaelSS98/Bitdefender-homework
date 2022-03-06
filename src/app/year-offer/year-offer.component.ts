@@ -35,7 +35,10 @@ export class YearOfferComponent implements OnInit {
   }
 
   //function that ensures original order of the object keys in ngFor
-  onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
+  onCompare(
+    _left: KeyValue<string, any>,
+    _right: KeyValue<string, any>
+  ): number {
     const leftValue = parseInt(_left.key.split('u')[0]);
     const rightValue = parseInt(_right.key.split('u')[0]);
 
