@@ -35,7 +35,10 @@
   <p class="for-the-year-paragraph mt-2 text-center">* For the first year</p>
 
   <!-- The buy button -->
-  <a href="{{priceData.value[this.chosenUnitKey].storeUrl}}" class="buy-button text-center" [ngClass]="{'buy-button-black': isFirst === false}">
+  <a href="{{priceData.value[this.chosenUnitKey].storeUrl}}"
+    class="buy-button text-center" 
+    [ngClass]="{'buy-button-black': isFirst === false}"
+  >
     <span class="buy-button-text">
       Buy Now
     </span>
