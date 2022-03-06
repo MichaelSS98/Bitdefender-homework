@@ -24,12 +24,22 @@ export class YearOfferComponent implements OnInit {
     [this.years, this.months] = this.priceData.key.split(/[ym]/g);
 
     //the first chosenUnitKey is the first key in the priceData.value object
-    this.chosenUnitKey = Object.keys(this.priceData.value)[0];
+    this.chosenUnitKey = Object.keys(this.priceData.value).sort(
+      (leftKey, rightKey) => {
+        const leftValue = parseInt(leftKey.split('u')[0]);
+        const rightValue = parseInt(rightKey.split('u')[0]);
+
+        return leftValue > rightValue ? 1 : -1;
+      }
+    )[0];
   }
 
   //function that ensures original order of the object keys in ngFor
   onCompare(_left: KeyValue<any, any>, _right: KeyValue<any, any>): number {
-    return 1;
+    const leftValue = parseInt(_left.key.split('u')[0]);
+    const rightValue = parseInt(_right.key.split('u')[0]);
+
+    return leftValue > rightValue ? 1 : -1;
   }
 
   //function that returns the plan for this deal

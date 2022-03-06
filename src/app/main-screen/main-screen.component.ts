@@ -39,7 +39,9 @@ export class MainScreenComponent implements OnInit {
           ...this.yearFilteredPricesData[year],
           [units]: {
             oldPrice: USDPriceData.Amount.toFixed(2) * 1,
-            newPrice: USDPriceData.discountedPrice.toFixed(2) * 1,
+            newPrice: USDPriceData.discountedPrice
+              ? USDPriceData.discountedPrice.toFixed(2) * 1
+              : USDPriceData.Amount.toFixed(2) * 1,
           },
         };
       }
