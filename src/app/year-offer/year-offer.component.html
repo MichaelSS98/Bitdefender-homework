@@ -26,21 +26,21 @@
 
   <!-- Pricings -->
   <h3 class="mt-2 new-price mb-0 text-center">
-    ${{this.priceData.value[this.chosenUnitKey].newPrice}}
+    ${{priceData.value[this.chosenUnitKey].newPrice}}
   </h3>
   <h5 class="old-price text-center">
-    Old Price <del>${{this.priceData.value[this.chosenUnitKey].oldPrice}}</del>
+    Old Price <del>${{priceData.value[this.chosenUnitKey].oldPrice}}</del>
   </h5>
   <span class="save-price">Save ${{calculateSave()}}</span>
   <p class="for-the-year-paragraph mt-2 text-center">* For the first year</p>
 
   <!-- The buy button -->
-  <button class="buy-button" [ngClass]="{'buy-button-black': isFirst === false}">
+  <a href="{{priceData.value[this.chosenUnitKey].storeUrl}}" class="buy-button text-center" [ngClass]="{'buy-button-black': isFirst === false}">
     <span class="buy-button-text">
       Buy Now
     </span>
     <span class="arrow"></span>
-  </button>
+  </a>
 
   <!-- Terms of use section -->
   <p class="terms-of-use-paragraph mt-1 mb-4 text-center">

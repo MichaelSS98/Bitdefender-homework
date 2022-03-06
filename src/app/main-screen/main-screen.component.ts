@@ -42,6 +42,7 @@ export class MainScreenComponent implements OnInit {
             newPrice: USDPriceData.discountedPrice
               ? USDPriceData.discountedPrice.toFixed(2) * 1
               : USDPriceData.Amount.toFixed(2) * 1,
+            storeUrl: USDPriceData.storeUrl,
           },
         };
       }
