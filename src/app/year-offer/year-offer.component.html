@@ -3,7 +3,7 @@
   <!-- the area for amount of money saved in percentages -->
   <div 
     class="d-flex discount justify-content-center"
-    [ngClass]="{'opacity-0': isFirst === false}"
+    [ngClass]="{'opacity-0': isFirst === false || calculateDiscountPercentage() === 0}"
   >
     Save {{calculateDiscountPercentage()}}%
   </div>
@@ -28,10 +28,10 @@
   <h3 class="mt-2 new-price mb-0 text-center">
     ${{this.priceData.value[this.chosenUnitKey].newPrice}}
   </h3>
-  <h5 class="old-price text-center">
+  <h5 class="old-price text-center" [ngClass]="{'opacity-0': calculateSave() === 0}">
     Old Price <del>${{this.priceData.value[this.chosenUnitKey].oldPrice}}</del>
   </h5>
-  <span class="save-price">Save ${{calculateSave()}}</span>
+  <span class="save-price"[ngClass]="{'opacity-0': calculateSave() === 0}">Save ${{calculateSave()}}</span>
   <p class="for-the-year-paragraph mt-2 text-center">* For the first year</p>
 
   <!-- The buy button -->

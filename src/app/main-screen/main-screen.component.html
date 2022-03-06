@@ -14,7 +14,7 @@
     data is passed to the app-year-component through inputs-->
     <app-year-offer 
       *ngFor="let priceData of yearFilteredPricesData | keyvalue; let index = index"
-      class="col-md-{{getNumberOfYears()}}"
+      class="col-md-{{getNumberOfYears()*2}} col-xl-{{getNumberOfYears()}}"
       [priceData]="priceData"
       [isFirst]="index === 0 ? true : false"
     >

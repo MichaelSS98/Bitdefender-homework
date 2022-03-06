@@ -33,18 +33,18 @@ export class MainScreenComponent implements OnInit {
         USDPriceData.OptionCodes[0].Options[0].split('-');
 
       //we filter all the entries that have no discounted price or that don't use full years
-      if (!year.includes('m') && USDPriceData.discountedPrice) {
-        //we dynamically compute the yearFilteredPricesData object
-        this.yearFilteredPricesData[year] = {
-          ...this.yearFilteredPricesData[year],
-          [units]: {
-            oldPrice: USDPriceData.Amount.toFixed(2) * 1,
-            newPrice: USDPriceData.discountedPrice
-              ? USDPriceData.discountedPrice.toFixed(2) * 1
-              : USDPriceData.Amount.toFixed(2) * 1,
-          },
-        };
-      }
+      // if (!year.includes('m') && USDPriceData.discountedPrice) {
+      //we dynamically compute the yearFilteredPricesData object
+      this.yearFilteredPricesData[year] = {
+        ...this.yearFilteredPricesData[year],
+        [units]: {
+          oldPrice: USDPriceData.Amount.toFixed(2) * 1,
+          newPrice: USDPriceData.discountedPrice
+            ? USDPriceData.discountedPrice.toFixed(2) * 1
+            : USDPriceData.Amount.toFixed(2) * 1,
+        },
+      };
+      // }
     });
   }
 
